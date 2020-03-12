@@ -23,11 +23,13 @@ import edu.wpi.first.wpilibj2.command.Command;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
-  private final MySubsystem m_mysubsystem = new MySubsystem();
+  //private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
+  private final MySubsystem m_mysubsystem = new MySubsystem(0.3);
 
-  private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
+  //private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final MyCommand m_autoforward = new MyCommand(m_mysubsystem);
+
+  private final Input controller = new Input();
 
 
 

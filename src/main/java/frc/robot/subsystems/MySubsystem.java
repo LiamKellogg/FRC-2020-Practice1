@@ -13,14 +13,15 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class MySubsystem extends SubsystemBase {
-  private final int deviceID = 11;
+  private final int deviceID = 9;
 
   private CANSparkMax motor = new CANSparkMax(deviceID, MotorType.kBrushless);
+  private double speed;
   /**
    * Creates a new ExampleSubsystem.
    */
-  public MySubsystem() {
-
+  public MySubsystem(double Speed) {
+    speed = Speed;
   }
 
   @Override
@@ -29,6 +30,6 @@ public class MySubsystem extends SubsystemBase {
   }
 
   public void move() {
-    motor.set(0.4);
+    motor.set(speed);
   }
 }
