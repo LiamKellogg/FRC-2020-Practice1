@@ -37,6 +37,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+    m_mysubsystem.setDefaultCommand(m_autoforward);
   }
 
   /**

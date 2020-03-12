@@ -13,7 +13,7 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class MySubsystem extends SubsystemBase {
-  private final int deviceID = 13;
+  private final int deviceID = 11;
 
   private CANSparkMax motor = new CANSparkMax(deviceID, MotorType.kBrushless);
   /**
