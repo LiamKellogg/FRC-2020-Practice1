@@ -16,12 +16,10 @@ public class MySubsystem extends SubsystemBase {
   private final int deviceID = 9;
 
   private CANSparkMax motor = new CANSparkMax(deviceID, MotorType.kBrushless);
-  private double speed;
   /**
    * Creates a new ExampleSubsystem.
    */
-  public MySubsystem(double Speed) {
-    speed = Speed;
+  public MySubsystem() {
   }
 
   @Override
@@ -29,7 +27,7 @@ public class MySubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void move() {
+  public void move(double speed) {
     motor.set(speed);
   }
 }
