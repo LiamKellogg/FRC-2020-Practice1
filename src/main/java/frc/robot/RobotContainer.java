@@ -26,7 +26,7 @@ public class RobotContainer {
 
   //private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
-  private final Input controller = new Input();
+  public final Input controller = new Input();
 
 
 
@@ -37,7 +37,7 @@ public class RobotContainer {
     // Configure the button bindings
     configureButtonBindings();
     m_mysubsystem.setDefaultCommand(
-      new RunCommand(() -> m_mysubsystem.move(controller.getForward()), m_mysubsystem)
+      new RunCommand(() -> m_mysubsystem.move(controller.getAxisY()), m_mysubsystem)
     );
   }
 

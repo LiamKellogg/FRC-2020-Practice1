@@ -12,7 +12,7 @@ public class Input {
 
     // Setup button maps here
 
-    public double getForward() {
+    public double getAxisY() {
         if (Math.abs(joystick0.getRawAxis(1)) < dead_zone) {
             return 0f;
         }
