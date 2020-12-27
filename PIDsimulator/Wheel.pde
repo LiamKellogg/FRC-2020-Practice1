@@ -24,14 +24,8 @@ class PoweredWheel {
     float Fgravity = 9.8 * mass;
     float NormalWE = 0;
     
-    // Return the distance from the line to the center of the circle
-    float[] pointOnGround = {floor(xPos), ground[floor(xPos)]};
-    float[] CenterOfMass = {xPos, yPos};
+    // Find if their is a collision
     
-    float distToGround = distLinetoPt(pointOnGround, slopeOfGround, CenterOfMass);
-    if (distToGround < radius) {
-      NormalWE = Fgravity * cos(theta);
-    }
     // Normal force is 0 if the object is in freefall, and the cos(theta) if the object is on the ground
     
   }
