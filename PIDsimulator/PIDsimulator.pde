@@ -14,28 +14,30 @@ Physics:
 
 */
 int pixelsToMeter = 100;
-Vector trans = new Vector(0, 0);
+Vector trans = new Vector(0, 0, pixelsToMeter);
 
 float[] terrain = {0, 0.5, 1, 1, 2, 2, 1.5, 1, 1, 1};
 Terrain ground = new Terrain(terrain, pixelsToMeter);
 
-Hitbox boxy = new Hitbox(1, 1, 0.5, 2, PI/6, true, pixelsToMeter);
+Hitbox boxyA = new Hitbox(1, 1, 0.5, 2, PI/6, true, pixelsToMeter);
+Hitbox boxyB = new Hitbox(1, -3, 0.5, 2, PI/2, true, pixelsToMeter);
 
 void setup() {
   size(800, 600);
   noStroke();
   background(255);
-  // trans.x = width / 2;
-  // trans.y = height / 2;
+  trans.x = width / (2 * pixelsToMeter);
+  trans.y = height / (2 * pixelsToMeter);
 }
 
 void draw() {
   background(255);
-  // translate(trans.x, trans.y);
+  translate(trans.x * pixelsToMeter, trans.y * pixelsToMeter);
   
   fill(0);
   noStroke();
-  boxy.IsCollide(boxy);
-  
+  // print(boxyA.IsCollide(boxyB), "\n");
+  boxyA.debug();
+  boxyB.debug();
   // draw terrain
 }
